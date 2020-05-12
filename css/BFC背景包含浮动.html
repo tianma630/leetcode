@@ -1,0 +1,46 @@
+<script>
+/**
+BFC的特性
+
+1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
+2. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
+3. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+4. BFC的区域不会与float box叠加。
+5. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+6. 计算BFC的高度时，浮动元素也参与计算。
+* /
+
+/**
+创建建BFC
+
+1. float 除了none以外的值
+2. overflow 除了visible 以外的值（hidden，auto，scroll ）
+3. display (table-cell，table-caption，inline-block, flex, inline-flex)
+4. position值为（absolute，fixed）
+5. fieldset元素
+ * /
+</script>
+
+<style>
+.box {
+    background-color: rgb(224, 206, 247);
+    border: 5px solid rebeccapurple;
+    /* overflow: auto; */
+    display: flow-root;
+}
+
+.float {
+    float: left;
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    border:1px solid black;
+    padding: 10px;
+    margin: 10px;
+}  
+</style>
+<div class="box">
+    <div class="float">I am a floated box!</div>
+    <div class="float">I am also a floated box!</div>
+    <p>I am content inside the container.</p>
+</div>
