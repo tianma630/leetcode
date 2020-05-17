@@ -2,7 +2,7 @@
 普通函数: 谁调用就指向谁。
 箭头函数: 调用者指向谁，则指向谁。
 逗号表达式: 返回最后一个表达式
-bind apply call: 手动改变this指向
+bind apply call: 手动改变this指向 箭头函数的this指向无法改变
 */
 var age = 10;
 var person={
