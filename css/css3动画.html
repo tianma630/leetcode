@@ -1,0 +1,43 @@
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: bisque;
+        transition: all 1s linear;
+    }
+    .box:hover {
+        width: 200px;
+        height: 200px;
+        transform: rotate(90deg);
+    }
+
+
+    @keyframes moveHover {
+        0% {
+            top: 0px;
+            left: 0px;
+            background: #cd4a48;
+        }
+        50% {
+            top: 200px;
+            left: 200px;
+            background:#A48992;
+        }
+        100% {
+            top: 350px;
+            left:350px;
+            background: #FFB89A;
+        }
+    }
+
+    .one {
+        width: 100px;
+        height: 100px;
+        margin: 200px auto;
+        background-color: #cd4a48;
+        position: relative;
+        animation: moveHover 5s ease-in-out 2s;
+    }
+</style>
+<div class="box"></div>
+<div class="one"></div>
