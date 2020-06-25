@@ -28,3 +28,58 @@ proxy.log()
 
 // proxy1[2] = 4;
 // console.log(proxy1[2])
+
+
+// function option(a) {
+
+//     let isNull = false
+
+//     function p(a) {
+//         var proxy = new Proxy(a, {
+//             get(target, key) {
+//                 if (target === null) {
+//                     return p(null);
+//                 }
+//                 const v = target[key];
+//                 if (typeof v == 'object') {
+//                     return p(target[key]);
+//                 } else if (typeof v == 'undefined') {
+//                     isNull = true;
+
+//                 } else {
+//                     return v;
+//                 }
+//             }
+//         });
+
+//         return proxy;
+//     }
+
+//     return p(a); 
+    
+// }
+
+let data = {
+    a: {
+        b: {
+            c: 111
+        }
+    }
+}
+
+// console.log(option(data).b.c)
+
+Object.keys(data).forEach(key => {
+    let v = data[key];
+    Object.defineProperty(data, key, {
+        get() {
+            console.log('key', key)
+            return v;
+        },
+        set(value) {
+            data[key] = value;
+        }
+    })
+})
+
+console.log(data.c)

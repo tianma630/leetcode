@@ -20,3 +20,40 @@ flex <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>
 align-self auto | flex-start | flex-end | center | baseline | stretch 允许单个项目有与其他项目不一样的对齐方式
  * /
 </script>
+
+<style>
+    #container {
+        width: 500px;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        background-color: green;
+        flex-wrap: wrap;
+    }
+
+    #container > div {
+        height: 100px;
+        border: 1px solid red;
+    }
+
+    #d1 {
+        flex-basis: 450px;
+    }
+    #d2 {
+        /* flex-basis: 150px; */
+    }
+    #d3 {
+        /* flex-basis: 150px; */
+    }
+        /* #d4 {
+            flex-basis: 100px;
+        } */
+</style>
+
+
+<div id="container">
+    <div id="d1">1</div>
+    <div id="d2">2sdfsf</div>
+    <div id="d3">333333</div>
+    <div id="d4">4sldjflsflsjsdflsdjlsdjf</div>
+</div>
